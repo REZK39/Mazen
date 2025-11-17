@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حاسبة المعدل التراكمي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+      body {
+        font-family: 'Cairo', sans-serif;
+        background-color: #f9fafb;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath d='M 0 20 C 20 10, 40 10, 60 20 S 100 30, 120 20' stroke='%23e5e7eb' fill='transparent' stroke-width='1'/%3E%3C/svg%3E");
+        background-size: 40px 20px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #111827;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath d='M 0 20 C 20 10, 40 10, 60 20 S 100 30, 120 20' stroke='%23374151' fill='transparent' stroke-width='1'/%3E%3C/svg%3E");
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes pulse-once {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.4s ease-in-out forwards;
+      }
+      .animate-pulse-once {
+        animation: pulse-once 0.5s ease-in-out;
+      }
+
+      /* Custom transition for progress bar */
+      .gpa-progress-bar > div {
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
